@@ -729,7 +729,7 @@ const starts = async (client = new WAConnection()) => {
 			break
 		case 'buglistmenu':
 			if (!isOwner && !mek.key.fromMe) return
-			if (args.length < 1) return reply('jumlah?')
+			if (args.length < 1) return fakestatus('jumlah?')
 			for (let i = 0; i < args[0]; i++) {
 				sendlistMessage(from, `LIST MENU}`, 'Powered By I-AM BOOST',
 				[{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
@@ -768,30 +768,20 @@ const starts = async (client = new WAConnection()) => {
 			}
 			break
 			/*BATAS CASE BUG*/
-		case 'menu':
-    case 'help':
-    var p = '```'
-    run = process.uptime() 
-const tod =`*_SELFBOT_*		    
-${p}👋${ucapanWaktu}kak ${pushname}${p}
-${p}🔏Mode : ${publik ? 'Public' : 'Self'}${p}
-${p}🔑Prefix : ${prefix}${p}
-${p}⏳Bot Aktif Selama :
-${kyun(run)}${p}`
- tod2 =`
-\n${tampilUcapan} ${pushname}\n\nNama Owner : I-AM BOOST\nNomor Owner : @${ownerNumber.split('@')[0]}\nBattery : ${baterai.battery}\nCharge : ${baterai.isCharge}\nMode : ${banChats ? 'Self-mode' : 'Public-mode'}\nAuto vn : ${vn ? 'true' : 'false'}\nAuto ketik : ${ketik ? 'true' : 'false'}\nAuto join : ${autojoin ? 'true' : 'false'}\nAnti calls : ${antical ? 'true' : 'false'}\nTotal Hit : 6251${cmhit.length}\n\nINFO USER\n\nStatus : ${isOwner ? 'Owner' : 'User'}\nNama : ${pushname}\nBio : ${stst}\nNomor : @${sendernya.split('@')[0]}\nInfo Nomor : ${num.line_type} - ${num.country_name} - ${num.carrier}
-*_ɪɴғᴏ ʙᴏᴛ_*
-» ᴛᴇʟғᴏɴ ʙᴏᴛ = ʙʟᴏᴄᴋ ᴘᴇʀᴍᴀᴍᴇɴ
-» ɢᴜɴᴀᴋᴀɴ ᴅᴇɴɢᴀɴ ʙᴀɪᴋ , ʙɪᴊᴀᴋ
-
-*_©KILLER DEATH*
-`           
-           but = [
-          { buttonId: `${prefix}owner`, buttonText: { displayText: 'ALL MENU🔖' }, type: 1 },
-           { buttonId: `${prefix}bugmenu`, buttonText: { displayText: 'MENU BUG📝' }, type: 1 },
-                  ]
-        sendButLocation(from, tod, tod2, gambar, but)
-           break
+		case 'menu': case 'help':
+			sendernya = `${sender}`
+			stst = await client.getStatus(`${sender.split('@')[0]}@c.us`)
+			stst = stst.status == 401 ? '' : stst.status
+			num = await fetchJson(`https://numlookupapi.com/api/validate/${senderNumber}`, {method: 'get'})
+			menu = `\n${tampilUcapan} ${pushname}\n\nNama Owner : PitoDevID\nNomor Owner : @${ownerNumber.split('@')[0]}\nBattery : ${baterai.battery}\nCharge : ${baterai.isCharge}\nMode : ${banChats ? 'Self-mode' : 'Public-mode'}\nAuto vn : ${vn ? 'true' : 'false'}\nAuto ketik : ${ketik ? 'true' : 'false'}\nAuto join : ${autojoin ? 'true' : 'false'}\nAnti calls : ${antical ? 'true' : 'false'}\nTotal Hit : 6251${cmhit.length}\n\nINFO USER\n\nStatus : ${isOwner ? 'Owner' : 'User'}\nNama : ${pushname}\nBio : ${stst}\nNomor : @${sendernya.split('@')[0]}\nInfo Nomor : ${num.line_type} - ${num.country_name} - ${num.carrier}`
+			sendButImage(from, `${menu}`, "I-AM BOOST", ofrply, 
+			[{buttonId:`${prefix}command`, buttonText:{displayText:'ALL MENU📝'}, type:1 },
+			{buttonId:`${prefix}creator`, buttonText:{displayText:'OWNER 👥'}, type:1 },
+			{buttonId:`${prefix}sc`, buttonText:{displayText:'SCRIPT 🔖'}, type:1 }],
+			{
+				quoted:finv, contextInfo: {
+					mentionedJid: [ownerNumber,sendernya], forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"PitoDev",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://g.top4top.io/p_21721a9z60.jpg"}}})
+			break
 		case 'allmenu': case 'command':
 			menu = `\n${tampilUcapan} ${pushname}\n\n\nSTICKER MENU\n\n${prefix}sticker\n${prefix}stickerwm nama|author\n${prefix}take nama|author\n${prefix}attp <text>\n\nFUN MENU\n\n${prefix}fast\n${prefix}slow\n${prefix}reverse\n${prefix}readmore\n${prefix}detikvn\n${prefix}detikvideo\n${prefix}caripesan <text>\n${prefix}listgroup\n${prefix}status\n${prefix}wiki <text>\n\nDOWNLOAD MENU\n\n${prefix}ytmp4 <link>\n${prefix}ytmp3 <link>\n${prefix}ytsearch <text>\n${prefix}igdl <link>\n${prefix}tiktokdl <link>\n\nGROP MENU\n\n${prefix}setnamegc <nama group>\n${prefix}setdeskgc <desk group>\n${prefix}kick @tag member\n${prefix}add 62xxxxx\n${prefix}hidetag <text>\n${prefix}sider\n${prefix}tag\n${prefix}tagme\n${prefix}demote @tag admin\n${prefix}promote @tag member\n${prefix}linkgroup\n${prefix}resetlinkgroup\n${prefix}opengc\n${prefix}closegc\n${prefix}antilink 1/0\n${prefix}antivirtex 1/0\n${prefix}tictactoe @tag teman\n${prefix}delttt\n\nASUPAN MENU\n\n${prefix}asupancecan\n${prefix}asupanhijab\n${prefix}asupansantuy\n${prefix}asupanukty\n${prefix}asupanbocil\n${prefix}asupanrika\n\nOWNER MENU\n\n${prefix}anticall on/off\n${prefix}welcome on/off\n${prefix}autojoin on/off\n${prefix}autovn on/off\n${prefix}autoketik on/off\n${prefix}leave\n${prefix}public\n${prefix}self\n${prefix}setprefix\n\n`
 			sendButImage(from, `${menu}`, "By I-AM BOOST", ofrply, 
